@@ -1,8 +1,7 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="de">
 <head>
-  <title>techmoerle</title>
+  <title>TechMoerle</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,15 +13,11 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row justify-content-center align-items-center g-2">
-            <div class="col">
-                {% include "shop/menue.html" %}
-                {% block content %}
-                {% endblock content %}               
-            </div>
-        </div>
-    </div>
+  {% include "shop/menue.html" %}
+  <div class="container">
+    {% block content %}
+    {% endblock content %}
+  </div>                
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
