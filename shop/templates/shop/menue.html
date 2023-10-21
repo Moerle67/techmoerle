@@ -1,6 +1,7 @@
+{% load static  %}
 <nav class="navbar shadow p-3 mb-4" style="background-color: rgb(23, 132, 23) ">
     <div< class="container-fluid">
-        <a class="navbar-brand link-light" href="{% url 'shop' %}">techmoerle</a>
+        <a class="navbar-brand link-light" href="{% url 'shop' %}"><img src="{% static 'pics/logo.png' %}" alt=""></a>
         <div class="navbar-nav">
             <div class="d-flex">
                 <a class="nav-link link-light p-2" href="#">Login</a>
