@@ -1,5 +1,17 @@
 {% extends "shop/index.html" %}
 
 {% block content %}
-    <h2>Warenkorb</h2>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="shadow p-2 mb-4">
+                <div class="d-flex justify-content-end">
+                    <p class="fw-bold p-2">Gesamtpreis: 50€</p>
+                    <p><a class="btn btn-danger" href="{% url 'kasse' %}">Kasse</a></p>
+                </div>
+            </div>
+            <div class="shadow p-2 mb-4">
+                
+            </div>
+        </div>
+    </div>
 {% endblock content %}
