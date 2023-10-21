@@ -1,5 +1,5 @@
 {% extends "shop/index.html" %}
-
+{% load static %}
 {% block content %}
     <div class="row mt-4">
         <div class="col-12">
@@ -10,7 +10,40 @@
                 </div>
             </div>
             <div class="shadow p-2 mb-4">
-                
+                <table class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nr.</th>
+                        <th scope="col">Bild</th>
+                        <th scope="col">Artikel</th>
+                        <th scope="col">Menge</th>
+                        <th scope="col">Preis</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                      <tr>
+                        <th scope="row">1</th>
+                        <td><img src="{% static 'pics/kopfhoerer.jpg' %}" width="50" height="50"></td>
+                        <td>Kopfhörer</td>
+                        <td>1</td>
+                        <td>99€</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td><img src="{% static 'pics/kopfhoerer.jpg' %}" width="50" height="50"></td>
+                        <td>Kopfhörer</td>
+                        <td>1</td>
+                        <td>99€</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td><img src="{% static 'pics/kopfhoerer.jpg' %}" width="50" height="50"></td>
+                        <td>Kopfhörer</td>
+                        <td>1</td>
+                        <td>99€</td>
+                      </tr>
+                    </tbody>
+                  </table>
             </div>
         </div>
     </div>
