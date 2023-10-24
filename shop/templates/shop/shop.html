@@ -4,8 +4,8 @@
   <div class="row row-cols-4">
     {% for artikel in artikels %}
       <div class="col mb-3">
-        <div class="card" style="max-width: 25rem;">
-          <img src="{% static 'pics/kopfhoerer.jpg'%}" class="card-img-top" alt="Kopfhörer">
+        <div class="card shadow" style="max-width: 25rem;">
+          <img src="{{artikel.bild.url}}" class="card-img-top" alt="Kopfhörer">
           <div class="card-body">
             <h5 class="card-title">{{artikel.name}}</h5>
             <p class="card-text">{{artikel.beschreibung}}</p>

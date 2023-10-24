@@ -22,6 +22,7 @@ class Artikel(models.Model):
     name = models.CharField("Name", max_length=200, null=True)
     beschreibung = models.TextField("Beschreibung", null=True, blank=True)
     preis = models.FloatField("Preis")
+    bild = models.ImageField("Bild", blank=True, null=True)
     
     class Meta:
         verbose_name = ("Artikel")
