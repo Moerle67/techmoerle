@@ -1,77 +1,22 @@
 {% extends "shop/index.html" %}
 {% load static %}
 {% block content %}
-    <div class="row row-cols-4">
-        <div class="col mb-3">
-            <div class="card" style="max-width: 25rem;">
-                <img src="{% static 'pics/kopfhoerer.jpg'%}" class="card-img-top" alt="Kopfhörer">
-                <div class="card-body">
-                  <h5 class="card-title">Kopfhörer</h5>
-                  <p class="card-text">Bluetooth Noise canceling</p>
-                  <a href="#" class="btn btn-secondary">Bestellen</a>
-                </div>
-              </div>
+  <div class="row row-cols-4">
+    {% for artikel in artikels %}
+      <div class="col mb-3">
+        <div class="card" style="max-width: 25rem;">
+          <img src="{% static 'pics/kopfhoerer.jpg'%}" class="card-img-top" alt="Kopfhörer">
+          <div class="card-body">
+            <h5 class="card-title">{{artikel.name}}</h5>
+            <p class="card-text">{{artikel.beschreibung}}</p>
+            <p class="card-text"></p>
+            <div class="d-flex justify-content-between">
+              <a href="#" class="btn btn-outline-success">Bestellen</a>
+              <h5 class="text-secondary">Preis: {{artikel.preis|floatformat:2}} Euro</h5>
+            </div>
+          </div>
         </div>
-        <div class="col mb-3">
-            <div class="card" style="max-width: 25rem;">
-                <img src="{% static 'pics/kopfhoerer.jpg'%}" class="card-img-top" alt="Kopfhörer">
-                <div class="card-body">
-                  <h5 class="card-title">Kopfhörer</h5>
-                  <p class="card-text">Bluetooth Noise canceling</p>
-                  <a href="#" class="btn btn-secondary">Bestellen</a>
-                </div>
-              </div>
-        </div>
-        <div class="col mb-3">
-            <div class="card" style="max-width: 25rem;">
-                <img src="{% static 'pics/kopfhoerer.jpg'%}" class="card-img-top" alt="Kopfhörer">
-                <div class="card-body">
-                  <h5 class="card-title">Kopfhörer</h5>
-                  <p class="card-text">Bluetooth Noise canceling</p>
-                  <a href="#" class="btn btn-secondary">Bestellen</a>
-                </div>
-              </div>
-        </div>
-        <div class="col mb-3">
-            <div class="card" style="max-width: 25rem;">
-                <img src="{% static 'pics/kopfhoerer.jpg'%}" class="card-img-top" alt="Kopfhörer">
-                <div class="card-body">
-                  <h5 class="card-title">Kopfhörer</h5>
-                  <p class="card-text">Bluetooth Noise canceling</p>
-                  <a href="#" class="btn btn-secondary">Bestellen</a>
-                </div>
-              </div>
-        </div>
-        <div class="col mb-3">
-            <div class="card" style="max-width: 25rem;">
-                <img src="{% static 'pics/kopfhoerer.jpg'%}" class="card-img-top" alt="Kopfhörer">
-                <div class="card-body">
-                  <h5 class="card-title">Kopfhörer</h5>
-                  <p class="card-text">Bluetooth Noise canceling</p>
-                  <a href="#" class="btn btn-secondary">Bestellen</a>
-                </div>
-              </div>
-        </div>
-        <div class="col mb-3">
-            <div class="card" style="max-width: 25rem;">
-                <img src="{% static 'pics/kopfhoerer.jpg'%}" class="card-img-top" alt="Kopfhörer">
-                <div class="card-body">
-                  <h5 class="card-title">Kopfhörer</h5>
-                  <p class="card-text">Bluetooth Noise canceling</p>
-                  <a href="#" class="btn btn-secondary">Bestellen</a>
-                </div>
-              </div>
-        </div>
-        <div class="col mb-3">
-            <div class="card" style="max-width: 25rem;">
-                <img src="{% static 'pics/kopfhoerer.jpg'%}" class="card-img-top" alt="Kopfhörer">
-                <div class="card-body">
-                  <h5 class="card-title">Kopfhörer</h5>
-                  <p class="card-text">Bluetooth Noise canceling</p>
-                  <a href="#" class="btn btn-secondary">Bestellen</a>
-                </div>
-              </div>
-        </div>
-    </div>
-
+      </div>
+    {% endfor %}
+  </div>
 {% endblock content %}

@@ -1,3 +1,4 @@
-shop/__pycache__/
-shop/migrations/
-techmoerle/__pycache__/
+shop/__pycache__/*
+shop/migrations/*
+techmoerle/__pycache__/*
+shop/__pycache__/*

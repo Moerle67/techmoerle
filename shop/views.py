@@ -1,9 +1,14 @@
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 
 def shop(request):
-    return render(request, 'shop/shop.html')
+    artikels = Artikel.objects.all()
+    content = {
+        'artikels': artikels,
+    }
+    return render(request, 'shop/shop.html', content)
 
 def warenkorb(request):
     return render(request, 'shop/warenkorb.html')
