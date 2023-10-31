@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 # Create your models here.
 
 class Kunde(models.Model):
@@ -50,6 +51,11 @@ class Bestellung(models.Model):
     def get_absolute_url(self):
         return reverse("Bestellung_detail", kwargs={"pk": self.pk})
     
+    @property
+    def get_gesamtpreis(self):
+        bestellteartikels = self.bestellteartikel_set.all()
+        gesamtpreis = sum(artikel.get_summe for artikel in bestellteartikels)
+        return gesamtpreis
 
 class BestellteArtikel(models.Model):
     artikel = models.ForeignKey(Artikel, verbose_name="Artikel", on_delete=models.SET_NULL, blank=True, null=True)
@@ -67,6 +73,11 @@ class BestellteArtikel(models.Model):
     def get_absolute_url(self):
         return reverse("BestellteArtikel_detail", kwargs={"pk": self.pk})
 
+    @property
+    def get_summe(self):
+        summe = self.artikel.preis * self.menge
+        return summe
+    
 class Adresse(models.Model):
     kunde = models.ForeignKey(Kunde, verbose_name=("Kunde"), on_delete=models.SET_NULL, null=True, blank=True)
     bestellung = models.ForeignKey(Bestellung, verbose_name=("Bestellung"), on_delete=models.SET_NULL, null=True, blank=True)

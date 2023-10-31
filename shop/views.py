@@ -17,7 +17,9 @@ def warenkorb(request):
         artikels = bestellung.bestellteartikel_set.all()
     else:
         artikels = []
-    content = {"artikels": artikels}
+        bestellung = []
+        
+    content = {"artikels": artikels, "bestellung": bestellung}
     return render(request, 'shop/warenkorb.html', content)
 
 def kasse(request):
