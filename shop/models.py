@@ -58,11 +58,11 @@ class BestellteArtikel(models.Model):
     datum = models.DateTimeField("Datum", auto_now_add=True)
 
     class Meta: 
-        verbose_name = "BestellteArtikel"
-        verbose_name_plural = "BestellteArtikel"
+        verbose_name = "Bestellter Artikel"
+        verbose_name_plural = "Bestellte Artikel"
 
     def __str__(self):
-        return self.artikel.name
+        return f"{self.bestellung} - {self.artikel}"
 
     def get_absolute_url(self):
         return reverse("BestellteArtikel_detail", kwargs={"pk": self.pk})
