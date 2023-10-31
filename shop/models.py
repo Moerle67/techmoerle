@@ -56,6 +56,13 @@ class Bestellung(models.Model):
         bestellteartikels = self.bestellteartikel_set.all()
         gesamtpreis = sum(artikel.get_summe for artikel in bestellteartikels)
         return gesamtpreis
+    
+    @property
+    def get_gesamtmenge(self):
+        bestellteartikels = self.bestellteartikel_set.all()
+        gesamtmenge = sum(artikel.menge for artikel in bestellteartikels)
+        return gesamtmenge
+
 
 class BestellteArtikel(models.Model):
     artikel = models.ForeignKey(Artikel, verbose_name="Artikel", on_delete=models.SET_NULL, blank=True, null=True)
