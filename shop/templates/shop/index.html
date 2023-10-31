@@ -6,6 +6,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="{% static 'pics/floppy-disk.png' %}" type="image/png">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   <!-- Bootstrap CSS v5.2.1 -->
@@ -19,6 +20,7 @@
   <div class="container">
     {% block content %}
     {% endblock content %}
+    {% include "shop/fusszeile.html" %}
   </div>                
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
