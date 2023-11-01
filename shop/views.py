@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
-
+from django.http import JsonResponse
+ 
 # Create your views here.
 
 def shop(request):
@@ -33,3 +34,9 @@ def kasse(request):
     content = {"artikels": artikels, "bestellung": bestellung}
 
     return render(request, 'shop/kasse.html', content)
+
+def artikelBackend(request):
+    return JsonResponse("Artikel hinzugefügt", safe=False)
+
+
+

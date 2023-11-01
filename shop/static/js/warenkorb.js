@@ -4,6 +4,18 @@ for (let i=0; i < bestellenButtons.length; i++) {
     bestellenButtons[i].addEventListener('click', function(){
         let artikelID = this.dataset.artikel;
         let action = this.dataset.action;
-        alert("ArtikelID "+artikelID+" Aktion: "+action);
+        updateKundenBestellung("ArtikelID "+artikelID+" Aktion: "+action);
+    })
+}
+
+function updateKundenBestellung(artikelID, action){
+    let url = '/artikel_backend/';
+
+    fetch(url, {
+        method: 'post',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify({'artikelID': artikelID, 'action':action})
     })
 }
