@@ -32,7 +32,8 @@
                         <td>{{artikel.menge}}</td>
                         <td>{{artikel.artikel.preis|floatformat:2}} €</td>
                         <td>{{artikel.get_summe|floatformat:2}} €</td>
-                      {% endfor %}
+                        <td><button data-artikel="{{artikel.artikel.id}}" data-action="entfernen" class="btn btn-outline-danger warenkorb-bestellen">-</button></td>
+                        {% endfor %}
                     </tbody>
                   </table>
             </div>

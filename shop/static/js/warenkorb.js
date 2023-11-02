@@ -19,4 +19,5 @@ function updateKundenBestellung(artikelID, action){
         },
         body:JSON.stringify({'artikelID': artikelID, 'action': action})
     })
+    .then(()=>location.reload())
 }
